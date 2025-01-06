@@ -1,0 +1,13 @@
+---
+- name: interface config
+  hosts: cisco
+  gather_facts: no
+  tasks:
+  - name: action interface  Ethernet0/2 trunk configure
+    ios_config:
+      lines:
+        - no shutdown
+        - ip address 1.1.1.1 255.255.255.0
+      parents: interface Ethernet0/2
+
+
